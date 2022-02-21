@@ -1,8 +1,100 @@
-#screen{
-    position: absolute;
-    height: 60px;
-    width: 720px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: grey;
+#screen {
+  position: absolute;
+  height: 60px;
+  width: 720px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: grey;
+}
+
+.buttons {
+  position: absolute;
+  top: 84px;
+  height: 348px;
+  width: 720px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: grey;
+}
+
+#functional-buttons {
+  position: absolute;
+  left: 6px;
+}
+
+#number-buttons {
+  position: absolute;
+  right: 6px;
+}
+
+#reset {
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  height: 62px;
+  width: 169px;
+}
+
+#square-root {
+  position: absolute;
+  top: 74px;
+  left: 3px;
+  height: 62px;
+  width: 81px;
+}
+
+#percent {
+  position: absolute;
+  top: 74px;
+  left: 91px;
+  height: 62px;
+  width: 81px;
+}
+
+#plus {
+  position: absolute;
+  top: 142px;
+  left: 3px;
+  height: 62px;
+  width: 81px;
+}
+
+#minus {
+  position: absolute;
+  top: 142px;
+  left: 91px;
+  height: 62px;
+  width: 81px;
+}
+
+#multiply {
+  position: absolute;
+  top: 210px;
+  left: 3px;
+  height: 62px;
+  width: 81px;
+}
+
+#division {
+  position: absolute;
+  top: 210px;
+  left: 91px;
+  height: 62px;
+  width: 81px;
+}
+
+#equal {
+  position: absolute;
+  top: 278px;
+  left: 3px;
+  height: 62px;
+  width: 81px;
+}
+
+#dot {
+  position: absolute;
+  top: 278px;
+  left: 91px;
+  height: 62px;
+  width: 81px;
 }
