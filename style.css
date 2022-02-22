@@ -1,7 +1,7 @@
 #screen {
   position: absolute;
   height: 60px;
-  width: 720px;
+  width: 600px;
   border-style: solid;
   border-width: 3px;
   border-color: grey;
@@ -11,7 +11,7 @@
   position: absolute;
   top: 84px;
   height: 348px;
-  width: 720px;
+  width: 600px;
   border-style: solid;
   border-width: 3px;
   border-color: grey;
@@ -97,4 +97,20 @@
   left: 91px;
   height: 62px;
   width: 81px;
+}
+
+#zero {
+  position: absolute;
+  top: 278px;
+  right: 6px;
+  height: 62px;
+  width: 81px;
+}
+
+#double_zero{
+  position: absolute;
+  top: 278px;
+  right: 93px;
+  height: 62px;
+  width: 162px;
 }
