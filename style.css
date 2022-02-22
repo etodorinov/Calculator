@@ -101,16 +101,88 @@
 
 #zero {
   position: absolute;
-  top: 278px;
+  top: 261px;
   right: 6px;
-  height: 62px;
+  height: 79px;
   width: 81px;
 }
 
 #double_zero{
   position: absolute;
-  top: 278px;
+  top: 261px;
   right: 93px;
-  height: 62px;
-  width: 162px;
+  height: 79px;
+  width: 168px;
+}
+
+#one{
+  position: absolute;
+  top: 176px;
+  right: 6px;
+  height: 79px;
+  width: 81px;
+}
+
+#two{
+  position: absolute;
+  top: 176px;
+  right: 93px;
+  height: 79px;
+  width: 81px;
+}
+
+#three{
+  position: absolute;
+  top: 176px;
+  right: 180px;
+  height: 79px;
+  width: 81px;
+}
+
+#four{
+  position: absolute;
+  top: 91px;
+  right: 6px;
+  height: 79px;
+  width: 81px;
+}
+
+#five{
+  position: absolute;
+  top: 91px;
+  right: 93px;
+  height: 79px;
+  width: 81px;
+}
+
+#six{
+  position: absolute;
+  top: 91px;
+  right: 180px;
+  height: 79px;
+  width: 81px;
+}
+
+#seven{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  height: 79px;
+  width: 81px;
+}
+
+#eight{
+  position: absolute;
+  top: 6px;
+  right: 93px;
+  height: 79px;
+  width: 81px;
+}
+
+#nine{
+  position: absolute;
+  top: 6px;
+  right: 180px;
+  height: 79px;
+  width: 81px;
 }
