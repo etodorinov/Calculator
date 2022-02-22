@@ -22,6 +22,10 @@
   left: 6px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 24px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 12px;
+  background-color: lightgrey;
 }
 
 .number-buttons {
@@ -29,6 +33,10 @@
   right: 6px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 24px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 12px;
+  background-color: lightgrey;
 }
 
 #reset {
