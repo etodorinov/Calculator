@@ -43,22 +43,63 @@ sevenButtonElement.addEventListener("click", sevenPressed);
 eightButtonElement.addEventListener("click", eightPressed);
 nineButtonElement.addEventListener("click", ninePressed);
 
+let currentNumber = 0;
+let result = 0;
+let lastOperation = "";
+let isPlusPressed = false;
+let isEqualPressed = false;
+
 function resetCalculator(e) {
   screenElement.textContent = "0";
+  result = 0;
+  lastOperation = "";
+  isPlusPressed = false;
+  isEqualPressed = false;
 }
-function addNumbers(e) {}
+
+function addNumbers(e) {
+  isPlusPressed = true;
+  currentNumber = Number(screenElement.textContent);
+  result += currentNumber;
+  screenElement.textContent = result;
+  lastOperation = "add";
+}
+
 function subtractNumbers(e) {}
+
 function multiplyNumbers(e) {}
+
 function deleteNumbers(e) {}
-function showResult(e) {}
+
 function percentCalculations(e) {}
+
 function squareRootCalculations(e) {}
-function dotPressed(e) {}
+
+function showResult(e) {
+  isEqualPressed = true;
+
+  if (lastOperation === "add") {
+    result += Number(screenElement.textContent);
+    screenElement.textContent = result;
+  }
+
+  result = 0;
+  lastOperation = "";
+  screenElement.textContent = Number(screenElement.textContent);
+}
+
+function dotPressed(e) {
+  if (!screenElement.textContent.includes(".")) {
+    screenElement.textContent += ".";
+  }
+}
+
 function doubleZeroPressed(e) {
   if (screenElement.textContent !== "0" && screenElement.textContent !== "00") {
     screenElement.textContent += "00";
   }
 }
+
 function zeroPressed(e) {
   if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
     screenElement.textContent = "0";
@@ -66,87 +107,125 @@ function zeroPressed(e) {
     screenElement.textContent += "0";
   }
 }
+
 function onePressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed ||
+    isEqualPressed
+  ) {
     screenElement.textContent = "1";
+    isPlusPressed = false;
   } else {
     screenElement.textContent += "1";
   }
 }
+
 function twoPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "2";
   } else {
     screenElement.textContent += "2";
   }
 }
+
 function threePressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "3";
   } else {
     screenElement.textContent += "3";
   }
 }
+
 function fourPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "4";
   } else {
     screenElement.textContent += "4";
   }
 }
+
 function fivePressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "5";
   } else {
     screenElement.textContent += "5";
   }
 }
+
 function sixPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "6";
   } else {
     screenElement.textContent += "6";
   }
 }
+
 function sevenPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "7";
   } else {
     screenElement.textContent += "7";
   }
 }
+
 function eightPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "8";
   } else {
     screenElement.textContent += "8";
   }
 }
+
 function ninePressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed
+  ) {
     screenElement.textContent = "9";
   } else {
     screenElement.textContent += "9";
   }
 }
 
-console.log(screenElement);
-console.log(resetButtonElement);
-console.log(plusButtonElement);
-console.log(minusButtonElement);
-console.log(multiplyButtonElement);
-console.log(equalButtonElement);
-console.log(percentButtonElement);
-console.log(squareRootButtonElement);
-console.log(dotButtonElement);
-console.log(doubleZeroButtonElement);
-console.log(zeroButtonElement);
-console.log(oneButtonElement);
-console.log(twoButtonElement);
-console.log(threeButtonElement);
-console.log(fourButtonElement);
-console.log(fiveButtonElement);
-console.log(sixButtonElement);
-console.log(sevenButtonElement);
-console.log(eightButtonElement);
-console.log(nineButtonElement);
+// console.log(screenElement);
+// console.log(resetButtonElement);
+// console.log(plusButtonElement);
+// console.log(minusButtonElement);
+// console.log(multiplyButtonElement);
+// console.log(equalButtonElement);
+// console.log(percentButtonElement);
+// console.log(squareRootButtonElement);
+// console.log(dotButtonElement);
+// console.log(doubleZeroButtonElement);
+// console.log(zeroButtonElement);
+// console.log(oneButtonElement);
+// console.log(twoButtonElement);
+// console.log(threeButtonElement);
+// console.log(fourButtonElement);
+// console.log(fiveButtonElement);
+// console.log(sixButtonElement);
+// console.log(sevenButtonElement);
+// console.log(eightButtonElement);
+// console.log(nineButtonElement);
