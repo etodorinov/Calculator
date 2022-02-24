@@ -44,16 +44,29 @@ eightButtonElement.addEventListener("click", eightPressed);
 nineButtonElement.addEventListener("click", ninePressed);
 
 let currentNumber = 0;
+let numbers = [];
 let result = 0;
 let lastOperation = "";
 let isPlusPressed = false;
+let isMinusPressed = false;
+let isMultiplyPressed = false;
+let isDeletePressed = false;
+let isPercentPressed = false;
+let isSquareRootPressed = false;
 let isEqualPressed = false;
 
 function resetCalculator(e) {
   screenElement.textContent = "0";
+  currentNumber = 0;
+  numbers = [];
   result = 0;
   lastOperation = "";
   isPlusPressed = false;
+  isMinusPressed = false;
+  isMultiplyPressed = false;
+  isDeletePressed = false;
+  isPercentPressed = false;
+  isSquareRootPressed = false;
   isEqualPressed = false;
 }
 
@@ -67,7 +80,23 @@ function addNumbers(e) {
 
 function subtractNumbers(e) {}
 
-function multiplyNumbers(e) {}
+function multiplyNumbers(e) {
+  isMultiplyPressed = true;
+  numbers.push(Number(screenElement.textContent));
+
+  if (numbers.length === 1) {
+    result = numbers[0];
+  } else {
+    let numbersL = numbers.length;
+    result = numbers[0];
+    for (let i = 1; i < numbersL; i++) {
+      result *= numbers[i];
+    }
+  }
+
+  screenElement.textContent = result;
+  lastOperation = "multiply";
+}
 
 function deleteNumbers(e) {}
 
@@ -79,10 +108,25 @@ function showResult(e) {
   isEqualPressed = true;
 
   if (lastOperation === "add") {
-    result += Number(screenElement.textContent);
-    screenElement.textContent = result;
+    if (isPlusPressed) {
+      screenElement.textContent = result;
+    } else {
+      addNumbers();
+      // result += Number(screenElement.textContent);
+      // screenElement.textContent = result;
+    }
   }
 
+  if (lastOperation === "multiply") {
+    if (isMultiplyPressed) {
+      screenElement.textContent = result;
+    } else {
+      multiplyNumbers();
+    }
+  }
+
+  currentNumber = 0;
+  numbers = [];
   result = 0;
   lastOperation = "";
   screenElement.textContent = Number(screenElement.textContent);
@@ -112,10 +156,12 @@ function onePressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
     isPlusPressed ||
+    isMultiplyPressed ||
     isEqualPressed
   ) {
     screenElement.textContent = "1";
     isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "1";
   }
@@ -124,9 +170,13 @@ function onePressed(e) {
 function twoPressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "2";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "2";
   }
@@ -135,9 +185,13 @@ function twoPressed(e) {
 function threePressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "3";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "3";
   }
@@ -146,9 +200,13 @@ function threePressed(e) {
 function fourPressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "4";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "4";
   }
@@ -157,9 +215,13 @@ function fourPressed(e) {
 function fivePressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "5";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "5";
   }
@@ -168,9 +230,13 @@ function fivePressed(e) {
 function sixPressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "6";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "6";
   }
@@ -179,9 +245,13 @@ function sixPressed(e) {
 function sevenPressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "7";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "7";
   }
@@ -190,9 +260,13 @@ function sevenPressed(e) {
 function eightPressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "8";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "8";
   }
@@ -201,9 +275,13 @@ function eightPressed(e) {
 function ninePressed(e) {
   if (
     (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
-    isPlusPressed
+    isPlusPressed ||
+    isMultiplyPressed ||
+    isEqualPressed
   ) {
     screenElement.textContent = "9";
+    isPlusPressed = false;
+    isMultiplyPressed = false;
   } else {
     screenElement.textContent += "9";
   }
