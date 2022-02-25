@@ -97,14 +97,16 @@ function addNumbers(e) {
     }
 
     isPlusPressed = true;
-    numbers.push(Number(screenElement.textContent));
     currentNumber = Number(screenElement.textContent);
-    if (numbers.length === 2) {
+
+    if (numbers.length === 1) {
+      numbers.push(Number(screenElement.textContent));
       result = numbers[1];
     } else {
       result = numbers[1] + currentNumber;
-      numbers.splice(1, 1, result);
     }
+
+    numbers.splice(1, 1, result);
     screenElement.textContent = result;
     lastOperation = "add";
 
@@ -142,14 +144,16 @@ function subtractNumbers(e) {
     }
 
     isMinusPressed = true;
-    numbers.push(Number(screenElement.textContent));
     currentNumber = Number(screenElement.textContent);
-    if (numbers.length === 2) {
+
+    if (numbers.length === 1) {
+      numbers.push(Number(screenElement.textContent));
       result = numbers[1];
     } else {
       result = numbers[1] - currentNumber;
-      numbers.splice(1, 1, result);
     }
+
+    numbers.splice(1, 1, result);
     screenElement.textContent = result;
     lastOperation = "subtract";
   }
@@ -180,14 +184,16 @@ function multiplyNumbers(e) {
     }
 
     isMultiplyPressed = true;
-    numbers.push(Number(screenElement.textContent));
     currentNumber = Number(screenElement.textContent);
-    if (numbers.length === 2) {
+
+    if (numbers.length === 1) {
+      numbers.push(Number(screenElement.textContent));
       result = numbers[1];
     } else {
       result = numbers[1] * currentNumber;
-      numbers.splice(1, 1, result);
     }
+
+    numbers.splice(1, 1, result);
     screenElement.textContent = result;
     lastOperation = "multiply";
 
@@ -232,14 +238,16 @@ function deleteNumbers(e) {
     }
 
     isDeletePressed = true;
-    numbers.push(Number(screenElement.textContent));
     currentNumber = Number(screenElement.textContent);
-    if (numbers.length === 2) {
+
+    if (numbers.length === 1) {
+      numbers.push(Number(screenElement.textContent));
       result = numbers[1];
     } else {
       result = numbers[1] / currentNumber;
-      numbers.splice(1, 1, result);
     }
+
+    numbers.splice(1, 1, result);
     screenElement.textContent = result;
     lastOperation = "delete";
   }
@@ -326,7 +334,6 @@ function showResult(e) {
   isDeletePressed = false;
   isPercentPressed = false;
   isSquareRootPressed = false;
-  isEqualPressed = false;
   screenElement.textContent = Number(screenElement.textContent);
 }
 
@@ -337,14 +344,39 @@ function dotPressed(e) {
 }
 
 function doubleZeroPressed(e) {
-  if (screenElement.textContent !== "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent !== "0" && screenElement.textContent !== "00") ||
+    isPlusPressed ||
+    isMinusPressed ||
+    isMultiplyPressed ||
+    isDeletePressed ||
+    isPercentPressed ||
+    isSquareRootPressed ||
+    isEqualPressed
+  ) {
     screenElement.textContent += "00";
   }
 }
 
 function zeroPressed(e) {
-  if (screenElement.textContent === "0" && screenElement.textContent !== "00") {
+  if (
+    (screenElement.textContent === "0" && screenElement.textContent !== "00") ||
+    isPlusPressed ||
+    isMinusPressed ||
+    isMultiplyPressed ||
+    isDeletePressed ||
+    isPercentPressed ||
+    isSquareRootPressed ||
+    isEqualPressed
+  ) {
     screenElement.textContent = "0";
+    isPlusPressed = false;
+    isMinusPressed = false;
+    isMultiplyPressed = false;
+    isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "0";
   }
@@ -366,6 +398,9 @@ function onePressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "1";
   }
@@ -387,6 +422,9 @@ function twoPressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "2";
   }
@@ -408,6 +446,9 @@ function threePressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "3";
   }
@@ -429,6 +470,9 @@ function fourPressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "4";
   }
@@ -450,6 +494,9 @@ function fivePressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "5";
   }
@@ -471,6 +518,9 @@ function sixPressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "6";
   }
@@ -492,6 +542,9 @@ function sevenPressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "7";
   }
@@ -513,6 +566,9 @@ function eightPressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "8";
   }
@@ -534,6 +590,9 @@ function ninePressed(e) {
     isMinusPressed = false;
     isMultiplyPressed = false;
     isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   } else {
     screenElement.textContent += "9";
   }
