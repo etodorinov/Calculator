@@ -60,9 +60,9 @@ function resetCalculator(e) {
   screenElement.textContent = "0";
   currentNumber = 0;
   temp = 0;
-  numbers = [];
   result = 0;
   lastOperation = "";
+  numbers = [];
   isPlusPressed = false;
   isMinusPressed = false;
   isMultiplyPressed = false;
@@ -74,14 +74,20 @@ function resetCalculator(e) {
 
 function addNumbers(e) {
   if (!isPlusPressed) {
+    if (lastOperation === "subtract") {
+      subtractNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
     if (lastOperation === "multiply") {
       multiplyNumbers();
       numbers = [];
       lastOperation = "";
     }
 
-    if (lastOperation === "subtract") {
-      subtractNumbers();
+    if (lastOperation === "delete") {
+      deleteNumbers();
       numbers = [];
       lastOperation = "";
     }
@@ -113,14 +119,20 @@ function addNumbers(e) {
 
 function subtractNumbers(e) {
   if (!isMinusPressed) {
+    if (lastOperation === "add") {
+      addNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
     if (lastOperation === "multiply") {
       multiplyNumbers();
       numbers = [];
       lastOperation = "";
     }
 
-    if (lastOperation === "add") {
-      addNumbers();
+    if (lastOperation === "delete") {
+      deleteNumbers();
       numbers = [];
       lastOperation = "";
     }
@@ -157,28 +169,81 @@ function multiplyNumbers(e) {
       lastOperation = "";
     }
 
+    if (lastOperation === "delete") {
+      deleteNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
     if (!numbers.includes("*")) {
       numbers.push("*");
     }
 
     isMultiplyPressed = true;
     numbers.push(Number(screenElement.textContent));
+    currentNumber = Number(screenElement.textContent);
     if (numbers.length === 2) {
       result = numbers[1];
     } else {
-      let numbersL = numbers.length;
-      result = numbers[1];
-      for (let i = 2; i < numbersL; i++) {
-        result *= numbers[i];
-      }
+      result = numbers[1] * currentNumber;
+      numbers.splice(1, 1, result);
     }
-
     screenElement.textContent = result;
     lastOperation = "multiply";
+
+    // isMultiplyPressed = true;
+    // numbers.push(Number(screenElement.textContent));
+    // if (numbers.length === 2) {
+    //   result = numbers[1];
+    // } else {
+    //   let numbersL = numbers.length;
+    //   result = numbers[1];
+    //   for (let i = 2; i < numbersL; i++) {
+    //     result *= numbers[i];
+    //   }
+    // }
+    // screenElement.textContent = result;
+    // lastOperation = "multiply";
   }
 }
 
-function deleteNumbers(e) {}
+function deleteNumbers(e) {
+  if (!isDeletePressed) {
+    if (lastOperation === "add") {
+      addNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
+    if (lastOperation === "subtract") {
+      subtractNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
+    if (lastOperation === "multiply") {
+      multiplyNumbers();
+      numbers = [];
+      lastOperation = "";
+    }
+
+    if (!numbers.includes("/")) {
+      numbers.push("/");
+    }
+
+    isDeletePressed = true;
+    numbers.push(Number(screenElement.textContent));
+    currentNumber = Number(screenElement.textContent);
+    if (numbers.length === 2) {
+      result = numbers[1];
+    } else {
+      result = numbers[1] / currentNumber;
+      numbers.splice(1, 1, result);
+    }
+    screenElement.textContent = result;
+    lastOperation = "delete";
+  }
+}
 
 function percentCalculations(e) {}
 
@@ -196,7 +261,7 @@ function showResult(e) {
   }
 
   if (lastOperation === "subtract") {
-    if (isPlusPressed) {
+    if (isMinusPressed) {
       screenElement.textContent = result;
     } else {
       subtractNumbers();
@@ -211,11 +276,26 @@ function showResult(e) {
     }
   }
 
+  if (lastOperation === "delete") {
+    if (isDeletePressed) {
+      screenElement.textContent = result;
+    } else {
+      deleteNumbers();
+    }
+  }
+
   currentNumber = 0;
   temp = 0;
-  numbers = [];
   result = 0;
   lastOperation = "";
+  numbers = [];
+  isPlusPressed = false;
+  isMinusPressed = false;
+  isMultiplyPressed = false;
+  isDeletePressed = false;
+  isPercentPressed = false;
+  isSquareRootPressed = false;
+  isEqualPressed = false;
   screenElement.textContent = Number(screenElement.textContent);
 }
 
