@@ -2,6 +2,9 @@
   position: absolute;
   height: 60px;
   width: 600px;
+  text-align: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 48px;
   border-style: solid;
   border-width: 3px;
   border-color: grey;
@@ -22,6 +25,17 @@
   left: 6px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 24px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 12px;
+  background-color: lightgrey;
+}
+
+.additional-functional-buttons {
+  position: absolute;
+  left: 96px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
   border-color: black;
   border-width: 1px;
   border-radius: 12px;
@@ -199,4 +213,47 @@
   right: 180px;
   height: 79px;
   width: 81px;
+}
+
+#back {
+  position: absolute;
+  top: 6px;
+  height: 62px;
+  width: 130px;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+#m-plus {
+  position: absolute;
+  top: 142px;
+  height: 62px;
+  width: 62px;
+  background-color: lightblue;
+}
+
+#m-minus {
+  position: absolute;
+  top: 142px;
+  left: 164px;
+  height: 62px;
+  width: 62px;
+  background-color: lightblue;
+}
+
+#m-reset {
+  position: absolute;
+  top: 74px;
+  height: 62px;
+  width: 62px;
+  background-color: lightblue;
+}
+
+#m-total {
+  position: absolute;
+  top: 74px;
+  left: 164px;
+  height: 62px;
+  width: 62px;
+  background-color: lightblue;
 }
