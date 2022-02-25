@@ -275,7 +275,10 @@ function percentCalculations(e) {
   lastOperation = "percent";
 }
 
-function squareRootCalculations(e) {}
+function squareRootCalculations(e) {
+  isSquareRootPressed = true;
+  screenElement.textContent = Math.sqrt(Number(screenElement.textContent));
+}
 
 function showResult(e) {
   isEqualPressed = true;
