@@ -340,6 +340,28 @@ function showResult(e) {
 function dotPressed(e) {
   if (!screenElement.textContent.includes(".")) {
     screenElement.textContent += ".";
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
+  }
+
+  if (
+    isPlusPressed ||
+    isMinusPressed ||
+    isMultiplyPressed ||
+    isDeletePressed ||
+    isPercentPressed ||
+    isSquareRootPressed ||
+    isEqualPressed
+  ) {
+    screenElement.textContent = ".";
+    isPlusPressed = false;
+    isMinusPressed = false;
+    isMultiplyPressed = false;
+    isDeletePressed = false;
+    isPercentPressed = false;
+    isSquareRootPressed = false;
+    isEqualPressed = false;
   }
 }
 
