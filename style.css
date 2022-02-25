@@ -40,6 +40,7 @@
   border-width: 1px;
   border-radius: 12px;
   background-color: lightgrey;
+  font-weight: bold;
 }
 
 .number-buttons {
@@ -146,7 +147,7 @@
 #one {
   position: absolute;
   top: 176px;
-  right: 6px;
+  right: 180px;
   height: 79px;
   width: 81px;
 }
@@ -162,7 +163,7 @@
 #three {
   position: absolute;
   top: 176px;
-  right: 180px;
+  right: 6px;
   height: 79px;
   width: 81px;
 }
@@ -170,7 +171,7 @@
 #four {
   position: absolute;
   top: 91px;
-  right: 6px;
+  right: 180px;
   height: 79px;
   width: 81px;
 }
@@ -186,7 +187,7 @@
 #six {
   position: absolute;
   top: 91px;
-  right: 180px;
+  right: 6px;
   height: 79px;
   width: 81px;
 }
@@ -194,7 +195,7 @@
 #seven {
   position: absolute;
   top: 6px;
-  right: 6px;
+  right: 180px;
   height: 79px;
   width: 81px;
 }
@@ -210,7 +211,7 @@
 #nine {
   position: absolute;
   top: 6px;
-  right: 180px;
+  right: 6px;
   height: 79px;
   width: 81px;
 }
@@ -221,7 +222,6 @@
   height: 62px;
   width: 130px;
   background-color: yellow;
-  font-weight: bold;
 }
 
 #m-plus {
