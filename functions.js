@@ -245,7 +245,35 @@ function deleteNumbers(e) {
   }
 }
 
-function percentCalculations(e) {}
+function percentCalculations(e) {
+  isPercentPressed = true;
+
+  if (numbers.includes("+")) {
+    temp = Number(screenElement.textContent);
+    screenElement.textContent = result + (result * temp) / 100;
+    numbers = [];
+  }
+
+  if (numbers.includes("-")) {
+    temp = Number(screenElement.textContent);
+    screenElement.textContent = result - (result * temp) / 100;
+    numbers = [];
+  }
+
+  if (numbers.includes("*")) {
+    multiplyNumbers();
+    screenElement.textContent = result / 100;
+    numbers = [];
+  }
+
+  if (numbers.includes("/")) {
+    deleteNumbers();
+    screenElement.textContent = result * 100;
+    numbers = [];
+  }
+
+  lastOperation = "percent";
+}
 
 function squareRootCalculations(e) {}
 
