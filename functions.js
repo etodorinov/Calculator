@@ -375,7 +375,16 @@ function dotPressed(e) {
   }
 }
 
-function backPressed(e) {}
+function backPressed(e) {
+  let forClearing = screenElement.textContent.split("");
+  forClearing.pop();
+  screenElement.textContent = forClearing.join("");
+
+  if (forClearing.length === 0) {
+    screenElement.textContent = 0;
+  }
+}
+
 function mPlusPressed(e) {}
 function mMinusPressed(e) {}
 function mTotalPressed(e) {}
