@@ -406,7 +406,12 @@ function mMinusPressed(e) {
   }
 }
 
-function mTotalPressed(e) {}
+function mTotalPressed(e) {
+  isMTotalPressed = true;
+  let mNumbersTotal = 0;
+  mNumbers.forEach((x) => (mNumbersTotal += x));
+  screenElement.textContent = mNumbersTotal;
+}
 
 function mResetPressed(e) {
   mNumbers = [];
