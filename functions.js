@@ -394,10 +394,17 @@ function mPlusPressed(e) {
   if (screenElement.textContent !== "0") {
     isMPlusPressed = true;
     mNumbers.push(Number(screenElement.textContent));
+    console.log(mNumbers);
   }
 }
 
-function mMinusPressed(e) {}
+function mMinusPressed(e) {
+  if (screenElement.textContent !== "0") {
+    isMMinusPressed = true;
+    mNumbers.push(-Number(screenElement.textContent));
+    console.log(mNumbers);
+  }
+}
 
 function mTotalPressed(e) {}
 
