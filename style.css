@@ -1,8 +1,9 @@
 #screen {
   position: absolute;
   height: 60px;
-  width: 600px;
+  width: 576px;
   text-align: right;
+  padding: 0px 12px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 48px;
   border-style: solid;
