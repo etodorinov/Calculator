@@ -8,6 +8,11 @@ const equalButtonElement = document.getElementById("equal");
 const percentButtonElement = document.getElementById("percent");
 const squareRootButtonElement = document.getElementById("square-root");
 const dotButtonElement = document.getElementById("dot");
+const backButtonElement = document.getElementById("back");
+const mPlusButtonElement = document.getElementById("m-plus");
+const mTotalButtonElement = document.getElementById("m-total");
+const mMinusButtonElement = document.getElementById("m-minus");
+const mResetButtonElement = document.getElementById("m-reset");
 const doubleZeroButtonElement = document.getElementById("double_zero");
 const zeroButtonElement = document.getElementById("zero");
 const oneButtonElement = document.getElementById("one");
@@ -31,6 +36,11 @@ equalButtonElement.addEventListener("click", showResult);
 percentButtonElement.addEventListener("click", percentCalculations);
 squareRootButtonElement.addEventListener("click", squareRootCalculations);
 dotButtonElement.addEventListener("click", dotPressed);
+backButtonElement.addEventListener("click", backPressed);
+mPlusButtonElement.addEventListener("click", mPlusPressed);
+mMinusButtonElement.addEventListener("click", mMinusPressed);
+mTotalButtonElement.addEventListener("click", mTotalPressed);
+mResetButtonElement.addEventListener("click", mResetPressed);
 doubleZeroButtonElement.addEventListener("click", doubleZeroPressed);
 zeroButtonElement.addEventListener("click", zeroPressed);
 oneButtonElement.addEventListener("click", onePressed);
@@ -364,6 +374,12 @@ function dotPressed(e) {
     isEqualPressed = false;
   }
 }
+
+function backPressed(e) {}
+function mPlusPressed(e) {}
+function mMinusPressed(e) {}
+function mTotalPressed(e) {}
+function mResetPressed(e) {}
 
 function doubleZeroPressed(e) {
   if (
