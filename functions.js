@@ -58,6 +58,7 @@ let temp = 0;
 let result = 0;
 let lastOperation = "";
 let numbers = [];
+let mNumbers = [];
 let isPlusPressed = false;
 let isMinusPressed = false;
 let isMultiplyPressed = false;
@@ -65,6 +66,9 @@ let isDeletePressed = false;
 let isPercentPressed = false;
 let isSquareRootPressed = false;
 let isEqualPressed = false;
+let isMPlusPressed = false;
+let isMMinusPressed = false;
+let isMTotalPressed = false;
 
 function resetCalculator(e) {
   screenElement.textContent = "0";
@@ -386,9 +390,14 @@ function backPressed(e) {
 }
 
 function mPlusPressed(e) {}
+
 function mMinusPressed(e) {}
+
 function mTotalPressed(e) {}
-function mResetPressed(e) {}
+
+function mResetPressed(e) {
+  mNumbers = [];
+}
 
 function doubleZeroPressed(e) {
   if (
@@ -414,7 +423,10 @@ function zeroPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "0";
     isPlusPressed = false;
@@ -424,6 +436,9 @@ function zeroPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "0";
   }
@@ -438,7 +453,10 @@ function onePressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "1";
     isPlusPressed = false;
@@ -448,6 +466,9 @@ function onePressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "1";
   }
@@ -462,7 +483,10 @@ function twoPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "2";
     isPlusPressed = false;
@@ -472,6 +496,9 @@ function twoPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "2";
   }
@@ -486,7 +513,10 @@ function threePressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "3";
     isPlusPressed = false;
@@ -496,6 +526,9 @@ function threePressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "3";
   }
@@ -510,7 +543,10 @@ function fourPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "4";
     isPlusPressed = false;
@@ -520,6 +556,9 @@ function fourPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "4";
   }
@@ -534,7 +573,10 @@ function fivePressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "5";
     isPlusPressed = false;
@@ -544,6 +586,9 @@ function fivePressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "5";
   }
@@ -558,7 +603,10 @@ function sixPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "6";
     isPlusPressed = false;
@@ -568,6 +616,9 @@ function sixPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "6";
   }
@@ -582,7 +633,10 @@ function sevenPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "7";
     isPlusPressed = false;
@@ -592,6 +646,9 @@ function sevenPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "7";
   }
@@ -606,7 +663,10 @@ function eightPressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "8";
     isPlusPressed = false;
@@ -616,6 +676,9 @@ function eightPressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "8";
   }
@@ -630,7 +693,10 @@ function ninePressed(e) {
     isDeletePressed ||
     isPercentPressed ||
     isSquareRootPressed ||
-    isEqualPressed
+    isEqualPressed ||
+    isMPlusPressed ||
+    isMMinusPressed ||
+    isMTotalPressed
   ) {
     screenElement.textContent = "9";
     isPlusPressed = false;
@@ -640,6 +706,9 @@ function ninePressed(e) {
     isPercentPressed = false;
     isSquareRootPressed = false;
     isEqualPressed = false;
+    isMPlusPressed = false;
+    isMMinusPressed = false;
+    isMTotalPressed = false;
   } else {
     screenElement.textContent += "9";
   }
