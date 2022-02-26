@@ -77,6 +77,7 @@ function resetCalculator(e) {
   result = 0;
   lastOperation = "";
   numbers = [];
+  mNumbers = [];
   isPlusPressed = false;
   isMinusPressed = false;
   isMultiplyPressed = false;
@@ -389,7 +390,12 @@ function backPressed(e) {
   }
 }
 
-function mPlusPressed(e) {}
+function mPlusPressed(e) {
+  if (screenElement.textContent !== "0") {
+    isMPlusPressed = true;
+    mNumbers.push(Number(screenElement.textContent));
+  }
+}
 
 function mMinusPressed(e) {}
 
