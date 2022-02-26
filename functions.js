@@ -353,7 +353,10 @@ function showResult(e) {
 }
 
 function dotPressed(e) {
-  if (!screenElement.textContent.includes(".")) {
+  if (
+    !screenElement.textContent.includes(".") &&
+    screenElement.textContent.length < 12
+  ) {
     screenElement.textContent += ".";
     isPercentPressed = false;
     isSquareRootPressed = false;
@@ -419,7 +422,9 @@ function mResetPressed(e) {
 
 function doubleZeroPressed(e) {
   if (
-    (screenElement.textContent !== "0" && screenElement.textContent !== "00") ||
+    (screenElement.textContent !== "0" &&
+      screenElement.textContent !== "00" &&
+      screenElement.textContent.length <= 11) ||
     isPlusPressed ||
     isMinusPressed ||
     isMultiplyPressed ||
@@ -457,7 +462,7 @@ function zeroPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "0";
   }
 }
@@ -487,7 +492,7 @@ function onePressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "1";
   }
 }
@@ -517,7 +522,7 @@ function twoPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "2";
   }
 }
@@ -547,7 +552,7 @@ function threePressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "3";
   }
 }
@@ -577,7 +582,7 @@ function fourPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "4";
   }
 }
@@ -607,7 +612,7 @@ function fivePressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "5";
   }
 }
@@ -637,7 +642,7 @@ function sixPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "6";
   }
 }
@@ -667,7 +672,7 @@ function sevenPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "7";
   }
 }
@@ -697,7 +702,7 @@ function eightPressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "8";
   }
 }
@@ -727,7 +732,7 @@ function ninePressed(e) {
     isMPlusPressed = false;
     isMMinusPressed = false;
     isMTotalPressed = false;
-  } else {
+  } else if (screenElement.textContent.length < 13) {
     screenElement.textContent += "9";
   }
 }
